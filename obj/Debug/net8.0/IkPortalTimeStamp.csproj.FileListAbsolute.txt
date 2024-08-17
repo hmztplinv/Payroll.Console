@@ -1,0 +1,14 @@
+C:\Users\hmztp\Desktop\IkPortalTimeStamp\bin\Debug\net8.0\IkPortalTimeStamp.exe
+C:\Users\hmztp\Desktop\IkPortalTimeStamp\bin\Debug\net8.0\IkPortalTimeStamp.deps.json
+C:\Users\hmztp\Desktop\IkPortalTimeStamp\bin\Debug\net8.0\IkPortalTimeStamp.runtimeconfig.json
+C:\Users\hmztp\Desktop\IkPortalTimeStamp\bin\Debug\net8.0\IkPortalTimeStamp.dll
+C:\Users\hmztp\Desktop\IkPortalTimeStamp\bin\Debug\net8.0\IkPortalTimeStamp.pdb
+C:\Users\hmztp\Desktop\IkPortalTimeStamp\obj\Debug\net8.0\IkPortalTimeStamp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hmztp\Desktop\IkPortalTimeStamp\obj\Debug\net8.0\IkPortalTimeStamp.AssemblyInfoInputs.cache
+C:\Users\hmztp\Desktop\IkPortalTimeStamp\obj\Debug\net8.0\IkPortalTimeStamp.AssemblyInfo.cs
+C:\Users\hmztp\Desktop\IkPortalTimeStamp\obj\Debug\net8.0\IkPortalTimeStamp.csproj.CoreCompileInputs.cache
+C:\Users\hmztp\Desktop\IkPortalTimeStamp\obj\Debug\net8.0\IkPortalTimeStamp.dll
+C:\Users\hmztp\Desktop\IkPortalTimeStamp\obj\Debug\net8.0\refint\IkPortalTimeStamp.dll
+C:\Users\hmztp\Desktop\IkPortalTimeStamp\obj\Debug\net8.0\IkPortalTimeStamp.pdb
+C:\Users\hmztp\Desktop\IkPortalTimeStamp\obj\Debug\net8.0\IkPortalTimeStamp.genruntimeconfig.cache
+C:\Users\hmztp\Desktop\IkPortalTimeStamp\obj\Debug\net8.0\ref\IkPortalTimeStamp.dll
