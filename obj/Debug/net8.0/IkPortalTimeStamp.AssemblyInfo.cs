@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IkPortalTimeStamp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+68edcc530efcd59eb6d1565dd76ac8456f863e0f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+805c41cc89f512bbbb52ac68bd623ab94997d0ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("IkPortalTimeStamp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IkPortalTimeStamp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

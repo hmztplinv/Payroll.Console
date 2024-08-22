@@ -2,6 +2,8 @@
 using PdfSharpCore.Drawing;
 using PdfSharpCore.Pdf;
 using PdfSharpCore.Pdf.IO;
+using ZXing;
+using ZXing.Common;
 
 public class TimestampService
 {
@@ -50,12 +52,16 @@ public class TimestampService
     {
         // PDF dosyasını kopyalama
         File.Copy(originalPdfFilePath, finalPdfFilePath, true);
-
-        // Kopyalanan dosyaya ikinci zaman damgası metnini ekleyelim
+        
+        // PDF'e ikinci zaman damgası bilgisini ekleyelim
         AddSecondTimestampTextToPdf(finalPdfFilePath, "2. zaman damgası uygulanmıştır", XStringFormats.BottomRight);
 
-        // PDF'e ikinci zaman damgasını ekleyelim
+        // QR kodu ekleyelim
+        AddQrCodeToPdf(finalPdfFilePath);
+
+        // Kopyalanan dosyaya ikinci zaman damgasını uygulama
         ApplyTimestamp(finalPdfFilePath, tssJarPath, tssAddress, tssPort, customerNo, customerPassword, hashType);
+
     }
 
     public static void AddTimestampTextToPdf(string pdfFilePath, string text, XStringFormat position)
@@ -82,6 +88,54 @@ public class TimestampService
         gfx.DrawString(text, font, XBrushes.Black, new XPoint(page.Width - 150, page.Height - 50));
 
         document.Save(pdfFilePath);
+    }
+
+    public static void AddQrCodeToPdf(string pdfFilePath)
+    {
+        PdfDocument document = PdfReader.Open(pdfFilePath, PdfDocumentOpenMode.Modify);
+        PdfPage page = document.Pages[0];
+        XGraphics gfx = XGraphics.FromPdfPage(page);
+
+        // QR kodu oluştur
+        var qrWriter = new BarcodeWriterPixelData
+        {
+            Format = BarcodeFormat.QR_CODE,
+            Options = new EncodingOptions
+            {
+                Height = 100,
+                Width = 100,
+                Margin = 0
+            }
+        };
+
+        var qrText = "https://yourmodalurl.com/logs"; // QR koduna gömülecek URL veya veri
+        var pixelData = qrWriter.Write(qrText);
+
+        using (var stream = new System.IO.MemoryStream())
+{
+    // QR kodu görselini oluştur ve belleğe kaydet
+    using (var bitmap = new System.Drawing.Bitmap(pixelData.Width, pixelData.Height, System.Drawing.Imaging.PixelFormat.Format32bppRgb))
+    {
+        var bitmapData = bitmap.LockBits(new System.Drawing.Rectangle(0, 0, pixelData.Width, pixelData.Height),
+            System.Drawing.Imaging.ImageLockMode.WriteOnly, System.Drawing.Imaging.PixelFormat.Format32bppRgb);
+        
+        System.Runtime.InteropServices.Marshal.Copy(pixelData.Pixels, 0, bitmapData.Scan0, pixelData.Pixels.Length);
+        bitmap.UnlockBits(bitmapData);
+
+        // Görseli MemoryStream'e kaydet
+        bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+    }
+
+    // Stream'in başlangıcına geri dön
+    stream.Position = 0;
+
+    // PdfSharp'ta kullanılacak XImage nesnesini oluştur
+    var xImage = XImage.FromStream(() => stream);
+    gfx.DrawImage(xImage, new XPoint((page.Width / 2) - 50, page.Height - 150)); // QR kodu ortalanmış şekilde eklenir
+}
+
+document.Save(pdfFilePath);
+
     }
 
     public static bool IsTimestampValid(string pdfFilePath, string tssJarPath)

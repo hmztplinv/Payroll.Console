@@ -34,3 +34,7 @@ C:\Users\hmztp\Desktop\Payroll.Console\bin\Debug\net8.0\SixLabors.ImageSharp.dll
 C:\Users\hmztp\Desktop\Payroll.Console\bin\Debug\net8.0\de\PdfSharpCore.resources.dll
 C:\Users\hmztp\Desktop\Payroll.Console\obj\Debug\net8.0\IkPortalTimeStamp.csproj.AssemblyReference.cache
 C:\Users\hmztp\Desktop\Payroll.Console\obj\Debug\net8.0\IkPortal.3274C1DC.Up2Date
+C:\Users\hmztp\Desktop\Payroll.Console\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\hmztp\Desktop\Payroll.Console\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Users\hmztp\Desktop\Payroll.Console\bin\Debug\net8.0\zxing.dll
+C:\Users\hmztp\Desktop\Payroll.Console\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
